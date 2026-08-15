@@ -11,15 +11,7 @@ Most citizens do not know their procedural and constitutional rights when stoppe
 
 **Nyaya Mitra solves this with a strict 30-second UX rule:**
 
-$$
-\text{Situation}
-\;\longrightarrow\;
-\text{STOP / BREATHE (3 Actions)}
-\;\longrightarrow\;
-\text{Rights \& Citations}
-\;\longrightarrow\;
-\text{Escalation / Complaints}
-$$
+Situation → STOP / BREATHE (3 Actions) → Rights & Citations → Escalation / Complaints
 
 ---
 
