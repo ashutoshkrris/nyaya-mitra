@@ -1,0 +1,399 @@
+{
+  "langCode": "en",
+  "langName": "English",
+  "appName": "NyayaMitra",
+  "tagline": "30-second legal decision guide & citizen rights shield under BNSS & Indian Constitution.",
+  "badgeText": "BNSS 2023 & Constitutional Safeguards",
+  "emergencyHeader": "Emergency SOS Helplines (One-Tap Dial)",
+  "legalCitationsBtn": "Legal Citations",
+  "searchPlaceholder": "Search situation (e.g., 'phone search', 'FIR refused', 'night arrest', 'bribe')...",
+  "noResultsTitle": "No scenarios found",
+  "noResultsDesc": "Try searching for 'FIR', 'traffic', 'arrest', or 'bribe'.",
+  "rightsHeading": "1. What the Law Says (Your Rights)",
+  "dosHeading": "What You MUST Do (Right Now)",
+  "dontsHeading": "What You Must AVOID Doing",
+  "complainHeading": "3. Where & How to Escalate / Complain",
+  "highPriorityBadge": "High Priority",
+  "footer": {
+    "builtFor": "Built for Indian Citizens • Legal data referenced from India Code & Supreme Court precedents.",
+    "disclaimer": "Disclaimer: NyayaMitra is an open-source civic initiative for legal awareness and does not constitute formal attorney counsel."
+  },
+  "sourcesModal": {
+    "title": "Statutory Sources & Judicial Authorities",
+    "subtitle": "All legal facts in NyayaMitra are grounded in gazetted legislation and Supreme Court rulings.",
+    "closeBtn": "Close"
+  },
+  "complaintGen": {
+    "title": "Instant SP Complaint Letter Generator",
+    "subtitle": "Generate a legally formatted complaint ready to email or submit to the SP/DCP office.",
+    "victimName": "Your Full Name",
+    "phone": "Your Phone Number",
+    "stationCity": "Police Station & City",
+    "officerDetails": "Officer Details (Name / Badge #)",
+    "description": "Incident Description (What happened?)",
+    "descPlaceholder": "I visited the police station to report theft. The officer on duty refused to register an FIR or issue a GD receipt...",
+    "previewDraft": "Generated Legal Draft",
+    "copyBtn": "Copy Letter",
+    "copiedBtn": "Copied to Clipboard!"
+  },
+  "emergencyNumbers": [
+    {
+      "name": "National Emergency",
+      "number": "112",
+      "badge": "All-in-One SOS"
+    },
+    { "name": "Women Helpline", "number": "1091", "badge": "24x7 Support" },
+    {
+      "name": "Anti-Corruption (ACB)",
+      "number": "1064",
+      "badge": "Bribes / Extortion"
+    },
+    { "name": "NHRC Helpline", "number": "14433", "badge": "Human Rights" }
+  ],
+  "categories": [
+    { "id": "all", "label": "All Scenarios" },
+    { "id": "traffic", "label": "Traffic Stops" },
+    { "id": "arrest", "label": "Arrest & Custody" },
+    { "id": "women", "label": "Women's Rights" },
+    { "id": "fir", "label": "FIR Refusal" },
+    { "id": "search", "label": "Search & Seizure" },
+    { "id": "bribe", "label": "Bribes & Extortion" },
+    { "id": "abuse", "label": "Assault & Abuse" }
+  ],
+  "scenarios": [
+    {
+      "id": "stopped-traffic",
+      "title": "Pulled Over / Traffic Stop",
+      "category": "traffic",
+      "iconName": "Car",
+      "severity": "info",
+      "quickSummary": "Police must be in uniform with a visible name badge. They cannot snatch your car keys or search your mobile phone without legal cause.",
+      "yourRights": [
+        "An officer below Sub-Inspector (SI) rank cannot issue fines for major offenses (must have uniform badge/stars).",
+        "You are legally entitled to present digital documents via DigiLocker or mParivahan (Rule 139 CMVR / IT Act Sec. 4).",
+        "Traffic police cannot forcibly remove your ignition key or deflate your tires.",
+        "You cannot be compelled to surrender your phone for search during a routine document check."
+      ],
+      "immediateSteps": {
+        "dos": [
+          "Politely ask for the officer's name, badge number, and designated police station.",
+          "Present driving license and RC through DigiLocker or mParivahan apps.",
+          "Always demand an official printed e-Challan receipt if fined; verify transaction ID."
+        ],
+        "donts": [
+          "Never hand over unreceipted physical cash under the pretext of an on-the-spot settlement.",
+          "Do not engage in physical altercations or resist lawful document verification."
+        ]
+      },
+      "whereToComplain": [
+        {
+          "authority": "Traffic Police Grievance Portal",
+          "contact": "1033 / 112",
+          "action": "Lodge online challan dispute citing the officer badge number and timestamp."
+        },
+        {
+          "authority": "Police Complaints Authority (PCA)",
+          "action": "File a formal written complaint against high-handed behavior or unlawful vehicle impoundment."
+        }
+      ],
+      "citations": [
+        {
+          "law": "Motor Vehicles (Amendment) Act",
+          "section": "Sec. 130 & 139 CMVR",
+          "description": "Mandates recognition of digital documents via DigiLocker/mParivahan."
+        },
+        {
+          "law": "BNSS 2023",
+          "section": "Sec. 35",
+          "legacyRef": "CrPC Sec. 41",
+          "description": "Governs reasonable grounds for questioning without arbitrary restraint."
+        }
+      ]
+    },
+    {
+      "id": "arrest-detention",
+      "title": "Arrest & Detention Safeguards",
+      "category": "arrest",
+      "iconName": "ShieldAlert",
+      "severity": "urgent",
+      "quickSummary": "You have constitutional protections against arbitrary detention, right to legal counsel, and immediate family notification.",
+      "yourRights": [
+        "Right to know the exact grounds of arrest immediately upon detention (Art. 22(1)).",
+        "Right to an Arrest Memo stating date, time, location, signed by an independent local witness and the arresting officer (D.K. Basu Guidelines).",
+        "Right to inform one family member or friend within 8–12 hours of arrest (BNSS Sec. 48 / CrPC Sec. 50A).",
+        "Mandatory production before the nearest Judicial Magistrate within 24 hours of arrest (Art. 22(2)).",
+        "Right to free legal aid from DLSA if unrepresented (Art. 39A)."
+      ],
+      "immediateSteps": {
+        "dos": [
+          "Demand to see the signed Arrest Memo and ensure a copy is given to you or your family.",
+          "Request an immediate medical examination at a government hospital upon arrest and every 48 hours during custody.",
+          "Exercise your statutory right to place a phone call to your family or lawyer."
+        ],
+        "donts": [
+          "Never sign blank papers, unsigned statements, or coerced confessions under pressure.",
+          "Do not physically resist arrest, as it can invite additional charges under BNS Sec. 221."
+        ]
+      },
+      "whereToComplain": [
+        {
+          "authority": "Judicial Magistrate",
+          "action": "Directly inform the magistrate during first appearance of any custodial mistreatment or denial of memo."
+        },
+        {
+          "authority": "National Human Rights Commission (NHRC)",
+          "contact": "14433",
+          "action": "Submit petition for unlawful custody beyond 24 hours or custodial violence."
+        }
+      ],
+      "citations": [
+        {
+          "law": "Constitution of India",
+          "section": "Articles 21, 22(1), 22(2)",
+          "description": "Fundamental right to life, legal representation, and 24-hour magistrate production."
+        },
+        {
+          "law": "Supreme Court of India",
+          "section": "D.K. Basu v. State of WB (1997)",
+          "description": "11 mandatory guidelines for arrest, detention, and custodial safeguards."
+        },
+        {
+          "law": "BNSS 2023",
+          "section": "Sec. 47 & 48",
+          "legacyRef": "CrPC Sec. 50 & 50A",
+          "description": "Mandatory disclosure of arrest grounds and family notification."
+        }
+      ]
+    },
+    {
+      "id": "arrest-women",
+      "title": "Rights of Women During Arrest",
+      "category": "women",
+      "iconName": "UserCheck",
+      "severity": "urgent",
+      "quickSummary": "Women cannot be arrested between sunset and sunrise except under exceptional circumstances with prior Magistrate permission.",
+      "yourRights": [
+        "No woman can be arrested after sunset (6 PM) and before sunrise (6 AM) without prior written permission from a Judicial Magistrate (BNSS Sec. 43(5) / CrPC Sec. 46(4)).",
+        "Only a female police officer can search or physically touch a woman (BNSS Sec. 51 / CrPC Sec. 51(2)).",
+        "A woman witness cannot be summoned to a police station; interrogation must take place at her residence (BNSS Sec. 179 / CrPC Sec. 160)."
+      ],
+      "immediateSteps": {
+        "dos": [
+          "Demand the presence of a female officer before permitting any physical search or custody.",
+          "Refuse overnight detention at a police station without a written judicial magistrate warrant.",
+          "Insist that a family member or legal counsel remains present during questioning."
+        ],
+        "donts": ["Do not accompany male police personnel alone after dark."]
+      },
+      "whereToComplain": [
+        {
+          "authority": "National Commission for Women (NCW)",
+          "contact": "7827170170 / 1091",
+          "action": "Direct escalation for unlawful arrest, harassment, or custodial misconduct."
+        },
+        {
+          "authority": "State Human Rights Commission (SHRC)",
+          "action": "Lodge formal grievance for violation of constitutional dignity and procedural protocols."
+        }
+      ],
+      "citations": [
+        {
+          "law": "BNSS 2023",
+          "section": "Sec. 43(5) & 51",
+          "legacyRef": "CrPC Sec. 46(4) & 51(2)",
+          "description": "Sunset-to-sunrise arrest prohibition and mandatory female search protocols."
+        },
+        {
+          "law": "Supreme Court of India",
+          "section": "Sheela Barse v. State of Maharashtra (1983)",
+          "description": "Mandates separate female lockups and protection against custodial harassment."
+        }
+      ]
+    },
+    {
+      "id": "fir-refusal",
+      "title": "Police Refusing to Register FIR",
+      "category": "fir",
+      "iconName": "FileText",
+      "severity": "warning",
+      "quickSummary": "Police are legally mandated to register an FIR for cognizable offenses immediately without delay.",
+      "yourRights": [
+        "Mandatory registration: Police cannot refuse to register an FIR if a cognizable offense (theft, assault, robbery, fraud) is disclosed (Lalita Kumari ruling).",
+        "Zero FIR: You can file an FIR at ANY police station regardless of where the crime occurred; the station must transfer it to the jurisdictional station.",
+        "Right to a free copy: You are entitled to an immediate, stamped copy of the FIR at zero cost (BNSS Sec. 173(2) / CrPC Sec. 154(2))."
+      ],
+      "immediateSteps": {
+        "dos": [
+          "Request the Station House Officer (SHO) to record your complaint in the General Diary (GD) and provide the GD Entry Number.",
+          "Insist on registering a 'Zero FIR' if jurisdiction is cited as an excuse.",
+          "Send the signed complaint via Registered Post / Speed Post / Email to the Superintendent of Police (SP) or DCP."
+        ],
+        "donts": [
+          "Do not leave the station without either an FIR copy or a stamped receipt/GD acknowledgment."
+        ]
+      },
+      "whereToComplain": [
+        {
+          "authority": "Superintendent of Police (SP) / DCP",
+          "action": "Submit written complaint under BNSS Sec. 173(3) / CrPC Sec. 154(3); the SP must investigate or direct FIR registration."
+        },
+        {
+          "authority": "Judicial Magistrate Court",
+          "action": "File an application under BNSS Sec. 175(3) / CrPC Sec. 156(3) seeking court orders to direct police to register FIR."
+        }
+      ],
+      "citations": [
+        {
+          "law": "Supreme Court Constitution Bench",
+          "section": "Lalita Kumari v. Govt. of UP (2014)",
+          "description": "FIR registration is mandatory upon receipt of cognizable offense information."
+        },
+        {
+          "law": "BNSS 2023",
+          "section": "Sec. 173(1), 173(3)",
+          "legacyRef": "CrPC Sec. 154",
+          "description": "Governs procedure for FIR registration and escalation to Superintendent of Police."
+        }
+      ]
+    },
+    {
+      "id": "search-seizure",
+      "title": "Search & Seizure of Property",
+      "category": "search",
+      "iconName": "Search",
+      "severity": "warning",
+      "quickSummary": "Searches of home or vehicle require a valid warrant or strict compliance with independent witness requirements.",
+      "yourRights": [
+        "Police require a valid Search Warrant issued by a Magistrate, except in hot pursuit or urgent investigation of cognizable crimes.",
+        "Searches must be conducted in the presence of two independent and respectable inhabitants of the locality (Panchas) (BNSS Sec. 103 / CrPC Sec. 100).",
+        "You have the right to receive a signed copy of the Seizure Memo (Panchnama) listing all confiscated items.",
+        "Occupants must be permitted to be present during the search."
+      ],
+      "immediateSteps": {
+        "dos": [
+          "Ask to inspect the written Search Warrant and verify the magistrate's seal and officer's name.",
+          "Insist that two local neighbors or independent witnesses are present throughout the search.",
+          "Demand a comprehensive written list of seized articles signed by the witnesses before anything leaves the premises."
+        ],
+        "donts": [
+          "Do not permit an unrecorded search or surrender items without a formal written receipt."
+        ]
+      },
+      "whereToComplain": [
+        {
+          "authority": "Judicial Magistrate",
+          "action": "File an application challenging illegal seizure under BNSS Sec. 503 / CrPC Sec. 451/457 for return of property."
+        },
+        {
+          "authority": "State Police Complaints Authority",
+          "action": "Report arbitrary house trespassing or unauthorized seizure of personal devices."
+        }
+      ],
+      "citations": [
+        {
+          "law": "BNSS 2023",
+          "section": "Sec. 103, Sec. 105",
+          "legacyRef": "CrPC Sec. 100, Sec. 165",
+          "description": "Search procedures, Panch witness mandates, and inventory list generation."
+        }
+      ]
+    },
+    {
+      "id": "bribe-extortion",
+      "title": "Police Demanding Bribes / Extortion",
+      "category": "bribe",
+      "iconName": "Banknote",
+      "severity": "urgent",
+      "quickSummary": "Demanding or accepting illegal gratification is a serious criminal offense punishable by rigorous imprisonment.",
+      "yourRights": [
+        "You are legally protected from harassment when reporting corruption to the Anti-Corruption Bureau (ACB) or CBI.",
+        "Demanding a bribe constitutes an offense under Section 7 of the Prevention of Corruption Act, 1988."
+      ],
+      "immediateSteps": {
+        "dos": [
+          "Note down the officer's name, rank, police station, date, exact time, and the exact sum demanded.",
+          "Call the Anti-Corruption Helpline (1064) immediately to arrange a lawful trap operation.",
+          "Preserve any digital communication, WhatsApp chats, or payment QR codes requested."
+        ],
+        "donts": [
+          "Do not pay the bribe. Paying bribes is also criminalized under the Prevention of Corruption (Amendment) Act."
+        ]
+      },
+      "whereToComplain": [
+        {
+          "authority": "Anti-Corruption Bureau (ACB)",
+          "contact": "1064",
+          "action": "Lodge immediate complaint for trap operation or investigation."
+        },
+        {
+          "authority": "Central Vigilance Commission (CVC) / CBI",
+          "contact": "1800-11-8888",
+          "action": "Report corruption involving central agencies or union territory personnel."
+        }
+      ],
+      "citations": [
+        {
+          "law": "Prevention of Corruption Act, 1988",
+          "section": "Sec. 7, Sec. 13",
+          "description": "Criminalizes public servants obtaining undue advantage."
+        },
+        {
+          "law": "Bharatiya Nyaya Sanhita (BNS)",
+          "section": "Sec. 201",
+          "legacyRef": "IPC Sec. 166",
+          "description": "Public servant disobeying direction under law to cause injury to any person."
+        }
+      ]
+    },
+    {
+      "id": "police-abuse",
+      "title": "Threats, Abuse & Physical Assault",
+      "category": "abuse",
+      "iconName": "AlertOctagon",
+      "severity": "urgent",
+      "quickSummary": "Police brutality and verbal abuse violate Article 21. Stations are required to maintain functional CCTV cameras.",
+      "yourRights": [
+        "Supreme Court mandates operational CCTV cameras with night vision and audio across all police stations (Paramvir Singh Saini judgment).",
+        "Right to be free from custodial torture and dignity violations under Article 21.",
+        "Right to an independent medical examination (MLC) conducted at a government hospital."
+      ],
+      "immediateSteps": {
+        "dos": [
+          "Go immediately to a government hospital casualty ward and request a Medico-Legal Certificate (MLC) detailing all injuries.",
+          "Take dated photographs and video documentation of physical marks or property damage.",
+          "File an application to preserve station CCTV footage before the overwrite window expires."
+        ],
+        "donts": [
+          "Do not delay medical examination; prompt documentation is crucial for judicial evidence."
+        ]
+      },
+      "whereToComplain": [
+        {
+          "authority": "Police Complaints Authority (PCA)",
+          "action": "File a complaint against serious misconduct, custodial violence, or extortion."
+        },
+        {
+          "authority": "Judicial Magistrate Court",
+          "action": "File a private criminal complaint under BNSS Sec. 223 / CrPC Sec. 200 against delinquent officers."
+        },
+        {
+          "authority": "NHRC / State Human Rights Commission",
+          "contact": "14433",
+          "action": "Lodge an urgent portal complaint for human rights violations and compensation."
+        }
+      ],
+      "citations": [
+        {
+          "law": "Supreme Court of India",
+          "section": "Paramvir Singh Saini v. Baljit Singh (2020)",
+          "description": "Mandatory CCTV in all police stations with 18-month storage directives."
+        },
+        {
+          "law": "Constitution of India",
+          "section": "Article 21",
+          "description": "Protection of life and personal liberty, including protection from custodial brutality."
+        }
+      ]
+    }
+  ]
+}
