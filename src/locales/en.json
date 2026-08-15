@@ -15,8 +15,10 @@
   "complainHeading": "3. Where & How to Escalate / Complain",
   "highPriorityBadge": "High Priority",
   "footer": {
+    "craftedBy": "Crafted with love for Indian Citizens by",
     "builtFor": "Built for Indian Citizens • Legal data referenced from India Code & Supreme Court precedents.",
-    "disclaimer": "Disclaimer: NyayaMitra is an open-source civic initiative for legal awareness and does not constitute formal attorney counsel."
+    "disclaimer": "Disclaimer: NyayaMitra is an open-source civic initiative for legal awareness and does not constitute formal attorney counsel.",
+    "rightsReserved": "NyayaMitra. All rights reserved. Open-source civic tool."
   },
   "sourcesModal": {
     "title": "Statutory Sources & Judicial Authorities",
@@ -27,14 +29,28 @@
     "title": "Instant SP Complaint Letter Generator",
     "subtitle": "Generate a legally formatted complaint ready to email or submit to the SP/DCP office.",
     "victimName": "Your Full Name",
+    "victimNamePlaceholder": "e.g., Rajesh Sharma",
     "phone": "Your Phone Number",
+    "phonePlaceholder": "e.g., +91 98765 43210",
     "stationCity": "Police Station & City",
+    "stationCityPlaceholder": "e.g., Koramangala PS, Bengaluru",
     "officerDetails": "Officer Details (Name / Badge #)",
+    "officerDetailsPlaceholder": "e.g., SI R. Kumar / Badge #452",
     "description": "Incident Description (What happened?)",
     "descPlaceholder": "I visited the police station to report theft. The officer on duty refused to register an FIR or issue a GD receipt...",
+    "violationsDefault": "Refusal to register FIR / High-handedness / Arbitrary detention",
     "previewDraft": "Generated Legal Draft",
     "copyBtn": "Copy Letter",
-    "copiedBtn": "Copied to Clipboard!"
+    "copiedBtn": "Copied to Clipboard!",
+    "defaults": {
+      "name": "[Your Full Name]",
+      "city": "[Your City / District]",
+      "phone": "[Your Phone Number]",
+      "station": "[Name of Police Station]",
+      "officer": "[Name / Badge Number / Description]",
+      "description": "[Describe step-by-step what occurred, what was said, and what action police took or refused to take.]"
+    },
+    "letterTemplate": "To,\nThe Superintendent of Police (SP) / Deputy Commissioner of Police (DCP),\nDistrict: {cityState}\n\nSubject: Formal Complaint under Section 173(3) of Bharatiya Nagarik Suraksha Sanhita (BNSS), 2023 (formerly CrPC Sec. 154(3)) regarding Police Misconduct / Grievance.\n\nRespected Sir/Madam,\n\nI, {victimName}, residing in {cityState}, Contact: {phone}, wish to bring the following unlawful incident to your immediate attention:\n\n1. INCIDENT DETAILS:\n- Date: {date}\n- Approximate Time: {time}\n- Concerned Police Station: {policeStation}\n- Officer(s) Involved: {officerDetails}\n\n2. NATURE OF GRIEVANCE & STATUTORY VIOLATIONS:\n{violations}\n\n3. BRIEF STATEMENT OF FACTS:\n{incidentDescription}\n\n4. PRAYER / RELIEF SOUGHT:\nIn light of the landmark Supreme Court ruling in Lalita Kumari v. Govt. of UP (2014) and the statutory mandates of BNSS 2023, I respectfully request your office to:\na) Intervene and direct the registration of an FIR / preserve CCTV footage under the Paramvir Singh Saini (2020) mandate.\nb) Initiate appropriate departmental and legal action against the delinquent officers for procedural violations.\nc) Provide me with a written acknowledgment of this complaint.\n\nYours sincerely,\n\n{victimName}\nDate: {date}\nContact: {phone}"
   },
   "emergencyNumbers": [
     {
@@ -285,7 +301,7 @@
           "action": "File an application challenging illegal seizure under BNSS Sec. 503 / CrPC Sec. 451/457 for return of property."
         },
         {
-          "authority": "State Police Complaints Authority",
+          "authority": "Police Complaints Authority (PCA)",
           "action": "Report arbitrary house trespassing or unauthorized seizure of personal devices."
         }
       ],

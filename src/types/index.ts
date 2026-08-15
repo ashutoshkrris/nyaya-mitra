@@ -47,6 +47,34 @@ export interface CategoryTab {
     label: string;
 }
 
+export interface ComplaintGenLocale {
+    title: string;
+    subtitle: string;
+    victimName: string;
+    victimNamePlaceholder: string;
+    phone: string;
+    phonePlaceholder: string;
+    stationCity: string;
+    stationCityPlaceholder: string;
+    officerDetails: string;
+    officerDetailsPlaceholder: string;
+    description: string;
+    descPlaceholder: string;
+    violationsDefault: string;
+    previewDraft: string;
+    copyBtn: string;
+    copiedBtn: string;
+    defaults: {
+        name: string;
+        city: string;
+        phone: string;
+        station: string;
+        officer: string;
+        description: string;
+    };
+    letterTemplate: string;
+}
+
 export interface LocaleData {
     langCode: string;
     langName: string;
@@ -64,27 +92,17 @@ export interface LocaleData {
     complainHeading: string;
     highPriorityBadge: string;
     footer: {
+        craftedBy: string;
         builtFor: string;
         disclaimer: string;
+        rightsReserved: string;
     };
     sourcesModal: {
         title: string;
         subtitle: string;
         closeBtn: string;
     };
-    complaintGen: {
-        title: string;
-        subtitle: string;
-        victimName: string;
-        phone: string;
-        stationCity: string;
-        officerDetails: string;
-        description: string;
-        descPlaceholder: string;
-        previewDraft: string;
-        copyBtn: string;
-        copiedBtn: string;
-    };
+    complaintGen: ComplaintGenLocale;
     emergencyNumbers: EmergencyContact[];
     categories: CategoryTab[];
     scenarios: Scenario[];

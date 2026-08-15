@@ -3,7 +3,8 @@ import { Copy, Check, ShieldAlert } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 export const ComplaintGenerator: React.FC = () => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
+  const cg = t.complaintGen;
 
   const [formData, setFormData] = useState({
     victimName: "",
@@ -14,81 +15,31 @@ export const ComplaintGenerator: React.FC = () => {
     date: new Date().toISOString().split("T")[0],
     time: "14:00",
     incidentDescription: "",
-    violations:
-      "Refusal to register FIR / High-handedness / Arbitrary detention",
+    violations: cg.violationsDefault,
   });
 
   const [copied, setCopied] = useState(false);
 
   const generateLetter = () => {
-    if (language === "hi") {
-      return `सेवा में,
-पुलिस अधीक्षक (SP) / पुलिस उपायुक्त (DCP),
-जिला: ${formData.cityState || "[आपका शहर / जिला]"}
+    let letter = cg.letterTemplate;
+    const replacements: Record<string, string> = {
+      "{victimName}": formData.victimName || cg.defaults.name,
+      "{cityState}": formData.cityState || cg.defaults.city,
+      "{phone}": formData.phone || cg.defaults.phone,
+      "{policeStation}": formData.policeStation || cg.defaults.station,
+      "{officerDetails}": formData.officerDetails || cg.defaults.officer,
+      "{date}": formData.date,
+      "{time}": formData.time,
+      "{violations}": formData.violations || cg.violationsDefault,
+      "{incidentDescription}":
+        formData.incidentDescription || cg.defaults.description,
+    };
 
-विषय: भारतीय नागरिक सुरक्षा संहिता (BNSS), 2023 की धारा 173(3) (पूर्व CrPC 154(3)) के तहत पुलिस दुर्व्यवहार / FIR न लिखने की औपचारिक शिकायत।
+    Object.entries(replacements).forEach(([key, val]) => {
+      letter = letter.replaceAll(key, val);
+    });
 
-महोदय/महोदया,
-
-मैं, ${formData.victimName || "[आपका नाम]"}, निवासी: ${formData.cityState || "[आपका पता]"}, संपर्क: ${formData.phone || "[मोबाइल नंबर]"}, निम्नलिखित गैर-कानूनी घटना को आपके संज्ञान में लाना चाहता/चाहती हूँ:
-
-1. घटना का विवरण:
-- दिनांक: ${formData.date}
-- समय: लगभग ${formData.time}
-- संबंधित थाना: ${formData.policeStation || "[थाने का नाम]"}
-- संबंधित पुलिसकर्मी: ${formData.officerDetails || "[नाम / बैच नंबर / पद]"}
-
-2. मुख्य शिकायत एवं कानूनी उल्लंघन:
-${formData.violations}
-
-3. घटना का संक्षिप्त विवरण:
-${formData.incidentDescription || "[घटना का सिलसिलेवार विवरण लिखें]"}
-
-4. प्रार्थना / आवश्यक कार्रवाई:
-माननीय सर्वोच्च न्यायालय के ललिता कुमारी (2014) और परमवीर सिंह सैनी (2020) के निर्णयों के आलोक में आपसे निवेदन है कि:
-क) तत्काल FIR दर्ज कराने तथा थाने के CCTV फुटेज सुरक्षित रखने का निर्देश दें।
-ख) दोषी पुलिसकर्मियों के विरुद्ध विभागीय एवं कानूनी जांच प्रारंभ करें।
-ग) इस शिकायत पत्र की लिखित पावती प्रदान करें।
-
-भवदीय,
-${formData.victimName || "[आपका नाम]"}
-दिनांक: ${formData.date}
-मो: ${formData.phone || "[मोबाइल नंबर]"}`;
-    }
-
-    return `To,
-The Superintendent of Police (SP) / Deputy Commissioner of Police (DCP),
-District: ${formData.cityState || "[Your City / District]"}
-
-Subject: Formal Complaint under Section 173(3) of Bharatiya Nagarik Suraksha Sanhita (BNSS), 2023 (formerly CrPC Sec. 154(3)) regarding Police Misconduct / Grievance.
-
-Respected Sir/Madam,
-
-I, ${formData.victimName || "[Your Full Name]"}, residing in ${formData.cityState || "[Your Address/City]"}, Contact: ${formData.phone || "[Your Phone Number]"}, wish to bring the following unlawful incident to your immediate attention:
-
-1. INCIDENT DETAILS:
-- Date: ${formData.date}
-- Approximate Time: ${formData.time}
-- Concerned Police Station: ${formData.policeStation || "[Name of Police Station]"}
-- Officer(s) Involved: ${formData.officerDetails || "[Name / Badge Number / Physical description]"}
-
-2. NATURE OF GRIEVANCE & STATUTORY VIOLATIONS:
-${formData.violations}
-
-3. BRIEF STATEMENT OF FACTS:
-${formData.incidentDescription || "[Describe step-by-step what occurred, what was said, and what action police took or refused to take.]"}
-
-4. PRAYER / RELIEF SOUGHT:
-In light of the landmark Supreme Court ruling in Lalita Kumari v. Govt. of UP (2014) and the statutory mandates of BNSS 2023, I respectfully request your office to:
-a) Intervene and direct the registration of an FIR / preserve CCTV footage under the Paramvir Singh Saini (2020) mandate.
-b) Initiate appropriate departmental and legal action against the delinquent officers for procedural violations.
-c) Provide me with a written acknowledgment of this complaint.
-
-Yours sincerely,
-
-${formData.victimName || "[Your Name]"}
-Date: ${formData.date}
-Contact: ${formData.phone || "[Your Phone]"}`;
+    return letter;
   };
 
   const handleCopy = () => {
@@ -98,28 +49,30 @@ Contact: ${formData.phone || "[Your Phone]"}`;
   };
 
   return (
-    <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-6 shadow-xl text-slate-100 mt-8">
+    <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-6 shadow-lg text-slate-900 dark:text-slate-100 mt-8 transition-colors">
       <div className="flex items-center gap-3 mb-4">
-        <div className="p-2.5 bg-blue-600/20 text-blue-400 rounded-xl">
+        <div className="p-2.5 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 rounded-xl border border-indigo-100 dark:border-indigo-800/40">
           <ShieldAlert className="w-6 h-6" />
         </div>
         <div>
-          <h3 className="text-lg font-bold text-white">
-            {t.complaintGen.title}
+          <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+            {cg.title}
           </h3>
-          <p className="text-xs text-slate-400">{t.complaintGen.subtitle}</p>
+          <p className="text-xs text-slate-600 dark:text-slate-400">
+            {cg.subtitle}
+          </p>
         </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
         <div>
-          <label className="text-xs font-semibold text-slate-300">
-            {t.complaintGen.victimName}
+          <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+            {cg.victimName}
           </label>
           <input
             type="text"
-            className="w-full mt-1 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="e.g., Rajesh Sharma"
+            className="w-full mt-1 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            placeholder={cg.victimNamePlaceholder}
             value={formData.victimName}
             onChange={(e) =>
               setFormData({ ...formData, victimName: e.target.value })
@@ -127,13 +80,13 @@ Contact: ${formData.phone || "[Your Phone]"}`;
           />
         </div>
         <div>
-          <label className="text-xs font-semibold text-slate-300">
-            {t.complaintGen.phone}
+          <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+            {cg.phone}
           </label>
           <input
             type="text"
-            className="w-full mt-1 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="e.g., +91 98765 43210"
+            className="w-full mt-1 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            placeholder={cg.phonePlaceholder}
             value={formData.phone}
             onChange={(e) =>
               setFormData({ ...formData, phone: e.target.value })
@@ -141,13 +94,13 @@ Contact: ${formData.phone || "[Your Phone]"}`;
           />
         </div>
         <div>
-          <label className="text-xs font-semibold text-slate-300">
-            {t.complaintGen.stationCity}
+          <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+            {cg.stationCity}
           </label>
           <input
             type="text"
-            className="w-full mt-1 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="e.g., Koramangala PS, Bengaluru"
+            className="w-full mt-1 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            placeholder={cg.stationCityPlaceholder}
             value={formData.policeStation}
             onChange={(e) =>
               setFormData({ ...formData, policeStation: e.target.value })
@@ -155,13 +108,13 @@ Contact: ${formData.phone || "[Your Phone]"}`;
           />
         </div>
         <div>
-          <label className="text-xs font-semibold text-slate-300">
-            {t.complaintGen.officerDetails}
+          <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+            {cg.officerDetails}
           </label>
           <input
             type="text"
-            className="w-full mt-1 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="e.g., SI R. Kumar / Badge #452"
+            className="w-full mt-1 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            placeholder={cg.officerDetailsPlaceholder}
             value={formData.officerDetails}
             onChange={(e) =>
               setFormData({ ...formData, officerDetails: e.target.value })
@@ -171,13 +124,13 @@ Contact: ${formData.phone || "[Your Phone]"}`;
       </div>
 
       <div className="mb-4">
-        <label className="text-xs font-semibold text-slate-300">
-          {t.complaintGen.description}
+        <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+          {cg.description}
         </label>
         <textarea
           rows={3}
-          className="w-full mt-1 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-          placeholder={t.complaintGen.descPlaceholder}
+          className="w-full mt-1 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          placeholder={cg.descPlaceholder}
           value={formData.incidentDescription}
           onChange={(e) =>
             setFormData({ ...formData, incidentDescription: e.target.value })
@@ -185,24 +138,25 @@ Contact: ${formData.phone || "[Your Phone]"}`;
         />
       </div>
 
-      <div className="bg-slate-950 border border-slate-800 rounded-xl p-4">
+      <div className="bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-4">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
-            {t.complaintGen.previewDraft}
+          <span className="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+            {cg.previewDraft}
           </span>
           <button
+            type="button"
             onClick={handleCopy}
-            className="inline-flex items-center gap-1 text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg transition-colors"
+            className="cursor-pointer inline-flex items-center gap-1 text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1.5 rounded-lg transition-colors shadow-sm"
           >
             {copied ? (
               <Check className="w-3.5 h-3.5 text-emerald-300" />
             ) : (
               <Copy className="w-3.5 h-3.5" />
             )}
-            {copied ? t.complaintGen.copiedBtn : t.complaintGen.copyBtn}
+            {copied ? cg.copiedBtn : cg.copyBtn}
           </button>
         </div>
-        <pre className="text-xs font-mono text-slate-300 whitespace-pre-wrap max-h-48 overflow-y-auto leading-relaxed">
+        <pre className="text-xs font-mono text-slate-800 dark:text-slate-300 whitespace-pre-wrap max-h-48 overflow-y-auto leading-relaxed">
           {generateLetter()}
         </pre>
       </div>
