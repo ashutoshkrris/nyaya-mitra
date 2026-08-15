@@ -27,6 +27,11 @@ export interface ComplaintAuthority {
     action: string;
 }
 
+export interface Point {
+    heading: string;
+    text: string;
+}
+
 export interface Scenario {
     id: string;
     title: string;
@@ -84,7 +89,6 @@ export interface LocaleData {
     badgeText: string;
     dangerAlertBtn: string;
     emergencyHeader: string;
-    legalCitationsBtn: string;
     searchPlaceholder: string;
     noResultsTitle: string;
     noResultsDesc: string;
@@ -100,9 +104,18 @@ export interface LocaleData {
     highPriorityBadge: string;
     footer: {
         craftedBy: string;
-        builtFor: string;
-        disclaimer: string;
         rightsReserved: string;
+        links: {
+            sources: string;
+            disclaimer: string;
+            github: string;
+        };
+    };
+    disclaimerModal: {
+        title: string;
+        subtitle: string;
+        points: Point[];
+        closeBtn: string;
     };
     sourcesModal: {
         title: string;

@@ -7,9 +7,10 @@ import { SearchAndFilter } from "./components/SearchAndFilter";
 import { ScenarioList } from "./components/ScenarioList";
 import { ComplaintGenerator } from "./components/ComplaintGenerator";
 import { SourcesModal } from "./components/SourcesModal";
+import { DisclaimerModal } from "./components/DisclaimerModal";
 import { Footer } from "./components/Footer";
 
-function MainApp() {
+export default function App() {
   const { t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState<"all" | Category>(
     "all",
@@ -19,16 +20,18 @@ function MainApp() {
     "arrest-detention",
   );
   const [isSourcesModalOpen, setIsSourcesModalOpen] = useState(false);
+  const [isDisclaimerModalOpen, setIsDisclaimerModalOpen] = useState(false);
 
   const filteredScenarios = t.scenarios.filter((item) => {
     const matchesCategory =
       selectedCategory === "all" || item.category === selectedCategory;
     const q = searchQuery.toLowerCase();
-    const matchesQuery =
-      item.title.toLowerCase().includes(q) ||
-      item.quickSummary.toLowerCase().includes(q) ||
-      item.yourRights.some((r) => r.toLowerCase().includes(q));
-    return matchesCategory && matchesQuery;
+    return (
+      matchesCategory &&
+      (item.title.toLowerCase().includes(q) ||
+        item.quickSummary.toLowerCase().includes(q) ||
+        item.yourRights.some((r) => r.toLowerCase().includes(q)))
+    );
   });
 
   const handleToggleScenario = (id: string) => {
@@ -36,11 +39,11 @@ function MainApp() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors duration-200">
       <EmergencyBar />
       <Header onToggleSources={() => setIsSourcesModalOpen(true)} />
 
-      <main className="max-w-6xl mx-auto px-4 py-6">
+      <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6">
         <SearchAndFilter
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}
@@ -62,11 +65,15 @@ function MainApp() {
         onClose={() => setIsSourcesModalOpen(false)}
       />
 
-      <Footer />
+      <DisclaimerModal
+        isOpen={isDisclaimerModalOpen}
+        onClose={() => setIsDisclaimerModalOpen(false)}
+      />
+
+      <Footer
+        onOpenSources={() => setIsSourcesModalOpen(true)}
+        onOpenDisclaimer={() => setIsDisclaimerModalOpen(true)}
+      />
     </div>
   );
-}
-
-export default function App() {
-  return <MainApp />;
 }

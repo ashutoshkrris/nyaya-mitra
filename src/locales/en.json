@@ -5,7 +5,6 @@
   "badgeText": "BNSS 2023 & Constitutional Safeguards",
   "dangerAlertBtn": "I am in immediate danger → Call 112",
   "emergencyHeader": "Emergency SOS Helplines (One-Tap Dial)",
-  "legalCitationsBtn": "Legal Citations",
   "searchPlaceholder": "Search situation (e.g., 'phone search', 'FIR refused', 'night arrest', 'bribe')...",
   "noResultsTitle": "No scenarios found",
   "noResultsDesc": "Try searching for 'FIR', 'traffic', 'arrest', or 'bribe'.",
@@ -20,14 +19,40 @@
   "complainHeading": "3. Where & How to Escalate / Complain",
   "highPriorityBadge": "High Priority",
   "footer": {
-    "craftedBy": "Crafted with love for Indian Citizens by",
-    "builtFor": "Built for Indian Citizens • Legal data referenced from India Code & Supreme Court precedents.",
-    "disclaimer": "Disclaimer: NyayaMitra is an open-source civic initiative for legal awareness and does not constitute formal attorney counsel.",
-    "rightsReserved": "NyayaMitra. All rights reserved."
+    "craftedBy": "Crafted with ❤ for Indian Citizens by",
+    "rightsReserved": "Nyaya Mitra. All rights reserved.",
+    "links": {
+      "sources": "Sources & Acts",
+      "disclaimer": "Legal Disclaimer",
+      "github": "GitHub Repository"
+    }
+  },
+  "disclaimerModal": {
+    "title": "Legal Disclaimer & Terms of Use",
+    "subtitle": "Important notice regarding the scope and limitations of Nyaya Mitra.",
+    "points": [
+      {
+        "heading": "1. Educational & Awareness Purpose Only",
+        "text": "Nyaya Mitra is an open-source civic initiative designed solely for legal awareness and informational reference. It does not constitute formal legal counsel, attorney-client representation, or professional legal advice."
+      },
+      {
+        "heading": "2. Statutory Basis & Dynamic Application",
+        "text": "All information is referenced from the Bharatiya Nagarik Suraksha Sanhita (BNSS), 2023, Bharatiya Nyaya Sanhita (BNS), 2023, the Constitution of India, and landmark Supreme Court judgments. However, legal outcomes and procedures vary based on specific facts, jurisdictions, and evidence."
+      },
+      {
+        "heading": "3. State-Specific Variations",
+        "text": "Police Complaints Authority (PCA) mechanisms, vigilance reporting lines, and local traffic e-challan systems vary by state and union territory. Always consult state-specific portals where applicable."
+      },
+      {
+        "heading": "4. Emergency Situations",
+        "text": "In any situation involving imminent physical threat, violence, or immediate danger, prioritize your physical safety and immediately contact the National Emergency Support System at 112 or NALSA Free Legal Aid at 15100."
+      }
+    ],
+    "closeBtn": "I Understand"
   },
   "sourcesModal": {
     "title": "Statutory Sources & Judicial Authorities",
-    "subtitle": "All legal facts in NyayaMitra are grounded in gazetted legislation and Supreme Court rulings.",
+    "subtitle": "All legal facts in Nyaya Mitra are grounded in gazetted legislation and Supreme Court rulings.",
     "closeBtn": "Close"
   },
   "complaintGen": {
@@ -65,12 +90,6 @@
       "highlight": true
     },
     {
-      "name": "NALSA Legal Aid",
-      "number": "15100",
-      "badge": "Free 24x7 Legal Counsel",
-      "highlight": true
-    },
-    {
       "name": "Women Helpline",
       "number": "1091",
       "badge": "24x7 Support"
@@ -84,6 +103,12 @@
       "name": "NHRC Helpline",
       "number": "14433",
       "badge": "Human Rights"
+    },
+    {
+      "name": "NALSA Legal Aid",
+      "number": "15100",
+      "badge": "Free 24x7 Legal Counsel",
+      "highlight": true
     }
   ],
   "categories": [
