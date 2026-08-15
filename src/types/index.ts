@@ -78,7 +78,6 @@ export interface ComplaintGenLocale {
 export interface LocaleData {
     langCode: string;
     langName: string;
-    appName: string;
     tagline: string;
     badgeText: string;
     emergencyHeader: string;

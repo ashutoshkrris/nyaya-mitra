@@ -22,7 +22,7 @@ export const Header: React.FC<HeaderProps> = ({ onToggleSources }) => {
 
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             <span className="text-indigo-700 dark:text-indigo-400">
-              {t.appName}
+              Nyaya Mitra
             </span>
           </h1>
 
