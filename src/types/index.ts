@@ -5,7 +5,8 @@ export type Category =
     | 'search'
     | 'women'
     | 'bribe'
-    | 'abuse';
+    | 'abuse'
+    | 'other';
 
 export interface LegalCitation {
     law: string;

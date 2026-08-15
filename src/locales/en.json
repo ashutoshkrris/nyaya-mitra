@@ -119,7 +119,8 @@
     { "id": "fir", "label": "FIR Refusal" },
     { "id": "search", "label": "Search & Seizure" },
     { "id": "bribe", "label": "Bribes & Extortion" },
-    { "id": "abuse", "label": "Assault & Abuse" }
+    { "id": "abuse", "label": "Assault & Abuse" },
+    { "id": "other", "label": "Other Situations / General Aid" }
   ],
   "scenarios": [
     {
@@ -488,6 +489,72 @@
           "law": "Constitution of India",
           "section": "Article 21",
           "description": "Protection of life and personal liberty, including protection from custodial brutality."
+        }
+      ]
+    },
+    {
+      "id": "general-first-aid",
+      "title": "Other Encounters & Universal Rights",
+      "category": "other",
+      "iconName": "Scale",
+      "severity": "info",
+      "quickSummary": "Universal constitutional safeguards for unlisted situations: witness summons, moral policing, juvenile custody, and digital device privacy.",
+      "panicSteps": [
+        "Ask calmly: 'Under which section of law is this being required or ordered?'",
+        "Exercise your Right to Silence (Art. 20(3)) — you cannot be compelled to self-incriminate.",
+        "Call NALSA Free Legal Aid at 15100 or Emergency at 112 if in doubt or facing harassment."
+      ],
+      "yourRights": [
+        "Right to Bodily Integrity & Dignity (Constitution Art. 21): Police cannot use abusive language, physical intimidation, or arbitrary detention without due process.",
+        "Witness Examination Protection (BNSS §179 / CrPC §160): Women, children under 15, men over 60, and persons with disabilities cannot be summoned to a police station as witnesses; questioning must occur at their residence.",
+        "Moral Policing & Privacy: Consenting adults in public places or private hotel rooms commit no offense. Police have no legal right to seize phones, take photos, or contact parents of adults.",
+        "Protection of Minors (Juvenile Justice Act): Children in conflict with the law cannot be handcuffed, kept in police lockups, or interrogated without a Child Welfare Police Officer.",
+        "Digital Device Privacy: Police cannot force you to unlock biometric/passcode-protected devices without a specific court order or formal warrant."
+      ],
+      "immediateSteps": {
+        "dos": [
+          "Ask for written notice under BNSS §179 if asked to appear as a witness.",
+          "Note the officer's name, designation badge, and police station.",
+          "Assert your right to consult an advocate before answering self-incriminating questions."
+        ],
+        "donts": [
+          "Never allow children/minors to be questioned in a police lockup without legal guardians or child welfare officers.",
+          "Do not surrender your private phone passwords during informal inquiries."
+        ]
+      },
+      "whereToComplain": [
+        {
+          "authority": "National Legal Services Authority (NALSA)",
+          "contact": "15100",
+          "action": "Toll-free 24x7 legal clarification and counsel."
+        },
+        {
+          "authority": "National / State Human Rights Commission",
+          "contact": "14433",
+          "action": "Lodge complaint for arbitrary harassment, moral policing, or dignity violations."
+        },
+        {
+          "authority": "Childline India (for minors)",
+          "contact": "1098",
+          "action": "Immediate intervention for illegal juvenile detention."
+        }
+      ],
+      "citations": [
+        {
+          "law": "Constitution of India",
+          "section": "Articles 20(3) & 21",
+          "description": "Protection against self-incrimination and protection of personal liberty and dignity."
+        },
+        {
+          "law": "BNSS 2023",
+          "section": "Sec. 179",
+          "legacyRef": "CrPC Sec. 160",
+          "description": "Witness summons safeguards for women, minors, and senior citizens."
+        },
+        {
+          "law": "Juvenile Justice Act, 2015",
+          "section": "Sec. 10 & 12",
+          "description": "Prohibition of lockup and handcuffing for minors."
         }
       ]
     }
