@@ -56,7 +56,7 @@
     "closeBtn": "Close"
   },
   "complaintGen": {
-    "title": "Instant SP Complaint Letter Generator",
+    "title": "Instant Complaint Letter Generator",
     "subtitle": "Generate a legally formatted complaint ready to email or submit to the SP/DCP office.",
     "victimName": "Your Full Name",
     "victimNamePlaceholder": "e.g., Rajesh Sharma",

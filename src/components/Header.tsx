@@ -1,14 +1,14 @@
 import React from "react";
-import { Scale, BookOpen } from "lucide-react";
+import { Scale, FileText } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
 
 interface HeaderProps {
-  onToggleSources: () => void;
+  onOpenComplaint: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onToggleSources }) => {
+export const Header: React.FC<HeaderProps> = ({ onOpenComplaint }) => {
   const { t } = useLanguage();
 
   return (
@@ -34,6 +34,14 @@ export const Header: React.FC<HeaderProps> = ({ onToggleSources }) => {
         <div className="flex flex-wrap items-center gap-2.5">
           <ThemeToggle />
           <LanguageSwitcher />
+          <button
+            type="button"
+            onClick={onOpenComplaint}
+            className="cursor-pointer inline-flex items-center gap-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold px-3.5 py-2 rounded-xl transition-all shadow-sm active:scale-95"
+          >
+            <FileText className="w-4 h-4" />
+            <span>{t.complaintGen.title}</span>
+          </button>
         </div>
       </div>
     </header>

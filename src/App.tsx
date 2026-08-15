@@ -5,10 +5,10 @@ import { EmergencyBar } from "./components/EmergencyBar";
 import { Header } from "./components/Header";
 import { SearchAndFilter } from "./components/SearchAndFilter";
 import { ScenarioList } from "./components/ScenarioList";
-import { ComplaintGenerator } from "./components/ComplaintGenerator";
 import { SourcesModal } from "./components/SourcesModal";
 import { DisclaimerModal } from "./components/DisclaimerModal";
 import { Footer } from "./components/Footer";
+import { ComplaintModal } from "./components/ComplaintModal";
 
 export default function App() {
   const { t } = useLanguage();
@@ -21,6 +21,7 @@ export default function App() {
   );
   const [isSourcesModalOpen, setIsSourcesModalOpen] = useState(false);
   const [isDisclaimerModalOpen, setIsDisclaimerModalOpen] = useState(false);
+  const [isComplaintModalOpen, setIsComplaintModalOpen] = useState(false);
 
   const filteredScenarios = t.scenarios.filter((item) => {
     const matchesCategory =
@@ -41,7 +42,7 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors duration-200">
       <EmergencyBar />
-      <Header onToggleSources={() => setIsSourcesModalOpen(true)} />
+      <Header onOpenComplaint={() => setIsComplaintModalOpen(true)} />
 
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6">
         <SearchAndFilter
@@ -56,8 +57,6 @@ export default function App() {
           expandedId={expandedScenarioId}
           onToggleScenario={handleToggleScenario}
         />
-
-        <ComplaintGenerator />
       </main>
 
       <SourcesModal
@@ -68,6 +67,11 @@ export default function App() {
       <DisclaimerModal
         isOpen={isDisclaimerModalOpen}
         onClose={() => setIsDisclaimerModalOpen(false)}
+      />
+
+      <ComplaintModal
+        isOpen={isComplaintModalOpen}
+        onClose={() => setIsComplaintModalOpen(false)}
       />
 
       <Footer
