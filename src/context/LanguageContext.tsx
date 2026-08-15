@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState } from "react";
 import enData from "../locales/en.json";
 import hiData from "../locales/hi.json";
 import type { LocaleData } from "../types";
