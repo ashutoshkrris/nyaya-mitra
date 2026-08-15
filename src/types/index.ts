@@ -18,6 +18,7 @@ export interface EmergencyContact {
     name: string;
     number: string;
     badge: string;
+    highlight?: boolean;
 }
 
 export interface ComplaintAuthority {
@@ -80,6 +81,7 @@ export interface LocaleData {
     langName: string;
     tagline: string;
     badgeText: string;
+    dangerAlertBtn: string;
     emergencyHeader: string;
     legalCitationsBtn: string;
     searchPlaceholder: string;

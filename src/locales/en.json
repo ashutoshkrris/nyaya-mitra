@@ -3,6 +3,7 @@
   "langName": "English",
   "tagline": "30-second legal decision guide & citizen rights shield under BNSS & Indian Constitution.",
   "badgeText": "BNSS 2023 & Constitutional Safeguards",
+  "dangerAlertBtn": "I am in immediate danger → Call 112",
   "emergencyHeader": "Emergency SOS Helplines (One-Tap Dial)",
   "legalCitationsBtn": "Legal Citations",
   "searchPlaceholder": "Search situation (e.g., 'phone search', 'FIR refused', 'night arrest', 'bribe')...",
@@ -55,7 +56,14 @@
     {
       "name": "National Emergency",
       "number": "112",
-      "badge": "All-in-One SOS"
+      "badge": "All-in-One SOS",
+      "highlight": true
+    },
+    {
+      "name": "NALSA Legal Aid",
+      "number": "15100",
+      "badge": "Free 24x7 Legal Counsel",
+      "highlight": true
     },
     { "name": "Women Helpline", "number": "1091", "badge": "24x7 Support" },
     {
