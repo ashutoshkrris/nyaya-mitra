@@ -33,6 +33,18 @@ export interface Point {
     text: string;
 }
 
+export interface SourceSection {
+    heading: string;
+    items: string[];
+}
+
+export interface SourcesModalLocale {
+    title: string;
+    subtitle: string;
+    closeBtn: string;
+    sections: SourceSection[];
+}
+
 export interface Scenario {
     id: string;
     title: string;
@@ -118,11 +130,7 @@ export interface LocaleData {
         points: Point[];
         closeBtn: string;
     };
-    sourcesModal: {
-        title: string;
-        subtitle: string;
-        closeBtn: string;
-    };
+    sourcesModal: SourcesModalLocale;
     complaintGen: ComplaintGenLocale;
     emergencyNumbers: EmergencyContact[];
     categories: CategoryTab[];

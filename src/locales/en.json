@@ -51,9 +51,45 @@
     "closeBtn": "I Understand"
   },
   "sourcesModal": {
-    "title": "Statutory Sources & Judicial Authorities",
-    "subtitle": "All legal facts in Nyaya Mitra are grounded in gazetted legislation and Supreme Court rulings.",
-    "closeBtn": "Close"
+    "title": "Primary Statutory & Judicial Authorities",
+    "subtitle": "All legal facts in NyayaMitra are grounded in gazetted legislation and Supreme Court rulings.",
+    "closeBtn": "Close",
+    "sections": [
+      {
+        "heading": "1. Criminal Law Codes (The Gazette of India & India Code)",
+        "items": [
+          "Bharatiya Nagarik Suraksha Sanhita (BNSS), 2023 (Act No. 46 of 2023 — Replaces CrPC 1973)",
+          "Bharatiya Nyaya Sanhita (BNS), 2023 (Act No. 45 of 2023 — Replaces IPC 1860)",
+          "Bharatiya Sakshya Adhiniyam (BSA), 2023 (Act No. 47 of 2023 — Replaces IEA 1872)"
+        ]
+      },
+      {
+        "heading": "2. Constitutional Safeguards (Constitution of India)",
+        "items": [
+          "Article 20(3): Protection against self-incrimination and right to silence.",
+          "Article 21: Protection of life, personal liberty, and bodily integrity against custodial torture.",
+          "Article 22(1) & (2): Right to know arrest grounds, lawyer access, and mandatory production before a Magistrate within 24 hours.",
+          "Article 39A: Constitutional mandate for equal justice and free legal aid (NALSA 15100)."
+        ]
+      },
+      {
+        "heading": "3. Landmark Supreme Court Judgments",
+        "items": [
+          "D.K. Basu v. State of West Bengal (1997) 1 SCC 416: 11 mandatory guidelines on arrest memos, identification, and informing relatives.",
+          "Lalita Kumari v. Govt. of U.P. (2014) 2 SCC 1: Mandatory registration of FIR upon receipt of cognizable offense information.",
+          "Paramvir Singh Saini v. Baljit Singh (2021) 1 SCC 836: Mandatory 24x7 CCTV cameras with night vision and audio in all police stations.",
+          "Sheela Barse v. State of Maharashtra (1983) 2 SCC 96: Female lockup protections and sunset-to-sunrise safeguards."
+        ]
+      },
+      {
+        "heading": "4. Subordinate & Special Legislation",
+        "items": [
+          "Prevention of Corruption Act, 1988 (Sec. 7 & 13) — ACB Hotline: 1064",
+          "Central Motor Vehicles Rules (Rule 139 CMVR) & IT Act Sec. 4 — Legal validity of DigiLocker & mParivahan",
+          "Juvenile Justice (Care & Protection of Children) Act, 2015 — Ban on handcuffing/lockup of minors (Childline: 1098)"
+        ]
+      }
+    ]
   },
   "complaintGen": {
     "title": "Instant Complaint Letter Generator",
