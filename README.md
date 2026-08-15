@@ -1,4 +1,4 @@
-# ⚖️ NyayaMitra (न्यायMitra)
+# ⚖️ Nyaya Mitra
 
 > **30 seconds. Know your rights. Know your next step.**
 > An open-source, civic-first web application designed to help Indian citizens instantly understand their legal rights and immediate next steps during police encounters.
@@ -9,7 +9,7 @@
 
 Most citizens do not know their procedural and constitutional rights when stopped, questioned, detained, or harassed by police. In high-stress encounters, reading multi-page legal PDFs or searching through 500+ sections of bare acts is impossible.
 
-**NyayaMitra solves this with a strict 30-second UX rule:**
+**Nyaya Mitra solves this with a strict 30-second UX rule:**
 
 $$
 \text{Situation}
@@ -106,7 +106,7 @@ All legal claims are derived from official Government of India gazettes and Supr
 ## 📂 Project Structure
 
 ```text
-nyayamitra/
+Nyaya Mitra/
 ├── index.html                  # HTML entry with SEO & PWA metadata
 ├── src/
 │   ├── components/
@@ -179,7 +179,7 @@ npm run preview
 
 ## ⚖️ Legal Disclaimer
 
-NyayaMitra is an open-source civic awareness project and does **not** constitute formal attorney counsel or legal advice.
+Nyaya Mitra is an open-source civic awareness project and does **not** constitute formal attorney counsel or legal advice.
 
 Laws and procedures may vary based on specific facts, states, and circumstances.
 
