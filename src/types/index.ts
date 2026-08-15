@@ -34,6 +34,7 @@ export interface Scenario {
     iconName: string;
     severity: 'urgent' | 'warning' | 'info';
     quickSummary: string;
+    panicSteps: [string, string, string];
     yourRights: string[];
     immediateSteps: {
         dos: string[];
@@ -87,6 +88,11 @@ export interface LocaleData {
     searchPlaceholder: string;
     noResultsTitle: string;
     noResultsDesc: string;
+    panicModeHeading: string;
+    seeFullRightsBtn: string;
+    hideFullRightsBtn: string;
+    readAloudBtn: string;
+    stopReadingBtn: string;
     rightsHeading: string;
     dosHeading: string;
     dontsHeading: string;

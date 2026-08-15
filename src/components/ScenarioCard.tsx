@@ -13,9 +13,13 @@ import {
   ChevronDown,
   ChevronUp,
   PhoneCall,
+  Volume2,
+  VolumeX,
+  Zap,
 } from "lucide-react";
 import type { Scenario } from "../types";
 import { useLanguage } from "../context/LanguageContext";
+import { useSpeech } from "../hooks/useSpeech";
 
 interface ScenarioCardProps {
   scenario: Scenario;
@@ -49,48 +53,98 @@ export const ScenarioCard: React.FC<ScenarioCardProps> = ({
   isExpanded,
   onToggle,
 }) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const { speak, speakingId } = useSpeech();
+  const isSpeaking = speakingId === scenario.id;
+
+  const handleAudioSpeech = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const narration = `${scenario.title}. ${t.panicModeHeading}. Step 1: ${scenario.panicSteps[0]}. Step 2: ${scenario.panicSteps[1]}. Step 3: ${scenario.panicSteps[2]}.`;
+    speak(scenario.id, narration, language);
+  };
 
   return (
-    <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/90 rounded-2xl overflow-hidden shadow-sm transition-all">
-      <div
-        onClick={onToggle}
-        className="cursor-pointer p-4 sm:p-5 flex items-start justify-between gap-4 hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors"
-      >
-        <div className="flex items-start gap-3.5">
-          <div className="p-2.5 bg-indigo-50 dark:bg-slate-800 border border-indigo-100 dark:border-slate-700 text-indigo-700 dark:text-indigo-400 rounded-xl flex-shrink-0 mt-0.5">
-            {renderIcon(scenario.iconName)}
-          </div>
-          <div>
-            <div className="flex items-center gap-2 flex-wrap">
-              <h2 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
-                {scenario.title}
-              </h2>
-              {scenario.severity === "urgent" && (
-                <span className="text-[10px] uppercase font-bold bg-red-100 dark:bg-red-950 border border-red-300 dark:border-red-800 text-red-700 dark:text-red-300 px-2 py-0.5 rounded-full">
-                  {t.highPriorityBadge}
-                </span>
-              )}
+    <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/90 rounded-2xl overflow-hidden shadow-sm transition-all hover:border-indigo-300 dark:hover:border-indigo-800">
+      <div className="p-4 sm:p-5">
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex items-start gap-3.5">
+            <div className="p-2.5 bg-indigo-50 dark:bg-slate-800 border border-indigo-100 dark:border-slate-700 text-indigo-700 dark:text-indigo-400 rounded-xl flex-shrink-0 mt-0.5">
+              {renderIcon(scenario.iconName)}
             </div>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
-              {scenario.quickSummary}
-            </p>
+            <div>
+              <div className="flex items-center gap-2 flex-wrap">
+                <h2 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+                  {scenario.title}
+                </h2>
+                {scenario.severity === "urgent" && (
+                  <span className="text-[10px] uppercase font-bold bg-red-100 dark:bg-red-950 border border-red-300 dark:border-red-800 text-red-700 dark:text-red-300 px-2 py-0.5 rounded-full">
+                    {t.highPriorityBadge}
+                  </span>
+                )}
+              </div>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
+                {scenario.quickSummary}
+              </p>
+            </div>
           </div>
+
+          <button
+            type="button"
+            onClick={handleAudioSpeech}
+            className={`cursor-pointer inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all flex-shrink-0 shadow-sm ${
+              isSpeaking
+                ? "bg-amber-100 dark:bg-amber-950/80 border-amber-400 text-amber-900 dark:text-amber-300 animate-pulse"
+                : "bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200"
+            }`}
+            title="Read Aloud"
+          >
+            {isSpeaking ? (
+              <VolumeX className="w-4 h-4 text-red-500" />
+            ) : (
+              <Volume2 className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+            )}
+            <span className="hidden sm:inline text-[11px]">
+              {isSpeaking ? t.stopReadingBtn : t.readAloudBtn}
+            </span>
+          </button>
         </div>
-        <button
-          type="button"
-          className="cursor-pointer text-slate-400 hover:text-slate-600 dark:hover:text-white p-1 flex-shrink-0"
-        >
-          {isExpanded ? (
-            <ChevronUp className="w-5 h-5" />
-          ) : (
-            <ChevronDown className="w-5 h-5" />
-          )}
-        </button>
+
+        {/* 30-Second Panic Triage Box */}
+        <div className="mt-4 bg-amber-50 dark:bg-amber-950/30 border border-amber-300 dark:border-amber-700/60 rounded-xl p-3.5">
+          <div className="flex items-center gap-1.5 text-xs font-black text-amber-950 dark:text-amber-300 uppercase tracking-wide mb-2">
+            <Zap className="w-4 h-4 text-amber-600 dark:text-amber-400 fill-amber-500" />
+            <span>{t.panicModeHeading}</span>
+          </div>
+          <ol className="space-y-1.5 text-xs sm:text-sm text-amber-950 dark:text-amber-100 list-decimal list-inside font-semibold">
+            {scenario.panicSteps.map((step, idx) => (
+              <li key={idx} className="leading-snug">
+                <span className="font-medium text-slate-900 dark:text-slate-100">
+                  {step}
+                </span>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        {/* Expand / Collapse Full Details */}
+        <div className="mt-3 flex items-center justify-between pt-1">
+          <button
+            type="button"
+            onClick={onToggle}
+            className="cursor-pointer inline-flex items-center gap-1.5 text-xs font-bold text-indigo-700 dark:text-indigo-400 hover:underline"
+          >
+            <span>{isExpanded ? t.hideFullRightsBtn : t.seeFullRightsBtn}</span>
+            {isExpanded ? (
+              <ChevronUp className="w-4 h-4" />
+            ) : (
+              <ChevronDown className="w-4 h-4" />
+            )}
+          </button>
+        </div>
       </div>
 
       {isExpanded && (
-        <div className="px-4 pb-6 sm:px-6 pt-2 border-t border-slate-200 dark:border-slate-800/60 bg-slate-50/50 dark:bg-slate-950/40 space-y-6">
+        <div className="px-4 pb-6 sm:px-6 pt-3 border-t border-slate-200 dark:border-slate-800/60 bg-slate-50/60 dark:bg-slate-950/60 space-y-6">
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-400 mb-2.5 flex items-center gap-1.5">
               <Scale className="w-4 h-4" />
@@ -167,7 +221,7 @@ export const ScenarioCard: React.FC<ScenarioCardProps> = ({
             </div>
           </div>
 
-          <div className="pt-2 border-t border-slate-200 dark:border-slate-900 flex flex-wrap gap-2">
+          <div className="pt-2 border-t border-slate-200 dark:border-slate-800 flex flex-wrap gap-2">
             {scenario.citations.map((cite, idx) => (
               <div
                 key={idx}

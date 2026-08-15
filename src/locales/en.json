@@ -9,6 +9,11 @@
   "searchPlaceholder": "Search situation (e.g., 'phone search', 'FIR refused', 'night arrest', 'bribe')...",
   "noResultsTitle": "No scenarios found",
   "noResultsDesc": "Try searching for 'FIR', 'traffic', 'arrest', or 'bribe'.",
+  "panicModeHeading": "STOP. BREATHE. DO THESE 3 THINGS RIGHT NOW:",
+  "seeFullRightsBtn": "View Complete Rights & Legal Sections",
+  "hideFullRightsBtn": "Hide Detailed Rights",
+  "readAloudBtn": "Listen (Audio)",
+  "stopReadingBtn": "Stop Audio",
   "rightsHeading": "1. What the Law Says (Your Rights)",
   "dosHeading": "What You MUST Do (Right Now)",
   "dontsHeading": "What You Must AVOID Doing",
@@ -18,7 +23,7 @@
     "craftedBy": "Crafted with love for Indian Citizens by",
     "builtFor": "Built for Indian Citizens • Legal data referenced from India Code & Supreme Court precedents.",
     "disclaimer": "Disclaimer: NyayaMitra is an open-source civic initiative for legal awareness and does not constitute formal attorney counsel.",
-    "rightsReserved": "NyayaMitra. All rights reserved. Open-source civic tool."
+    "rightsReserved": "NyayaMitra. All rights reserved."
   },
   "sourcesModal": {
     "title": "Statutory Sources & Judicial Authorities",
@@ -65,13 +70,21 @@
       "badge": "Free 24x7 Legal Counsel",
       "highlight": true
     },
-    { "name": "Women Helpline", "number": "1091", "badge": "24x7 Support" },
+    {
+      "name": "Women Helpline",
+      "number": "1091",
+      "badge": "24x7 Support"
+    },
     {
       "name": "Anti-Corruption (ACB)",
       "number": "1064",
       "badge": "Bribes / Extortion"
     },
-    { "name": "NHRC Helpline", "number": "14433", "badge": "Human Rights" }
+    {
+      "name": "NHRC Helpline",
+      "number": "14433",
+      "badge": "Human Rights"
+    }
   ],
   "categories": [
     { "id": "all", "label": "All Scenarios" },
@@ -91,6 +104,11 @@
       "iconName": "Car",
       "severity": "info",
       "quickSummary": "Police must be in uniform with a visible name badge. They cannot snatch your car keys or search your mobile phone without legal cause.",
+      "panicSteps": [
+        "Ask politely for the officer's name, badge number, and police station.",
+        "Present your driving license and RC via DigiLocker or mParivahan (Rule 139 CMVR).",
+        "Do not surrender your phone for search and demand a printed e-Challan receipt if fined."
+      ],
       "yourRights": [
         "An officer below Sub-Inspector (SI) rank cannot issue fines for major offenses (must have uniform badge/stars).",
         "You are legally entitled to present digital documents via DigiLocker or mParivahan (Rule 139 CMVR / IT Act Sec. 4).",
@@ -140,6 +158,11 @@
       "iconName": "ShieldAlert",
       "severity": "urgent",
       "quickSummary": "You have constitutional protections against arbitrary detention, right to legal counsel, and immediate family notification.",
+      "panicSteps": [
+        "Ask immediately: 'What are the grounds of arrest, and is this offense bailable?' (BNSS §47).",
+        "Demand a signed Arrest Memo and name a family member/friend who must be informed (BNSS §48).",
+        "Call NALSA 15100 for free legal aid or contact your lawyer immediately (Art. 22)."
+      ],
       "yourRights": [
         "Right to know the exact grounds of arrest immediately upon detention (Art. 22(1)).",
         "Right to an Arrest Memo stating date, time, location, signed by an independent local witness and the arresting officer (D.K. Basu Guidelines).",
@@ -195,6 +218,11 @@
       "iconName": "UserCheck",
       "severity": "urgent",
       "quickSummary": "Women cannot be arrested between sunset and sunrise except under exceptional circumstances with prior Magistrate permission.",
+      "panicSteps": [
+        "Demand a female police officer for any physical search or custody (BNSS §51).",
+        "Refuse arrest between 6 PM (sunset) and 6 AM (sunrise) without a written Magistrate order (BNSS §43(5)).",
+        "Insist that questioning takes place at your residence if summoned as a witness (BNSS §179)."
+      ],
       "yourRights": [
         "No woman can be arrested after sunset (6 PM) and before sunrise (6 AM) without prior written permission from a Judicial Magistrate (BNSS Sec. 43(5) / CrPC Sec. 46(4)).",
         "Only a female police officer can search or physically touch a woman (BNSS Sec. 51 / CrPC Sec. 51(2)).",
@@ -240,6 +268,11 @@
       "iconName": "FileText",
       "severity": "warning",
       "quickSummary": "Police are legally mandated to register an FIR for cognizable offenses immediately without delay.",
+      "panicSteps": [
+        "Ask the officer to record the complaint in the General Diary (GD) and provide the GD Entry Number.",
+        "Demand a 'Zero FIR' if jurisdiction is cited as an excuse to turn you away.",
+        "Send the signed complaint via Registered Speed Post / Email to the SP/DCP under BNSS §173(3)."
+      ],
       "yourRights": [
         "Mandatory registration: Police cannot refuse to register an FIR if a cognizable offense (theft, assault, robbery, fraud) is disclosed (Lalita Kumari ruling).",
         "Zero FIR: You can file an FIR at ANY police station regardless of where the crime occurred; the station must transfer it to the jurisdictional station.",
@@ -286,6 +319,11 @@
       "iconName": "Search",
       "severity": "warning",
       "quickSummary": "Searches of home or vehicle require a valid warrant or strict compliance with independent witness requirements.",
+      "panicSteps": [
+        "Ask to inspect the written Search Warrant and verify the Magistrate's seal.",
+        "Insist that two independent local witnesses (Panchas) are present throughout the search (BNSS §103).",
+        "Demand a signed inventory list (Seizure Memo / Panchnama) before anything leaves your premises."
+      ],
       "yourRights": [
         "Police require a valid Search Warrant issued by a Magistrate, except in hot pursuit or urgent investigation of cognizable crimes.",
         "Searches must be conducted in the presence of two independent and respectable inhabitants of the locality (Panchas) (BNSS Sec. 103 / CrPC Sec. 100).",
@@ -328,6 +366,11 @@
       "iconName": "Banknote",
       "severity": "urgent",
       "quickSummary": "Demanding or accepting illegal gratification is a serious criminal offense punishable by rigorous imprisonment.",
+      "panicSteps": [
+        "Do not pay the bribe — paying bribes is also penalized under the law.",
+        "Note down the officer's name, badge number, station, time, and exact payment demands/QR code.",
+        "Call the Anti-Corruption Bureau (ACB) Helpline immediately at 1064."
+      ],
       "yourRights": [
         "You are legally protected from harassment when reporting corruption to the Anti-Corruption Bureau (ACB) or CBI.",
         "Demanding a bribe constitutes an offense under Section 7 of the Prevention of Corruption Act, 1988."
@@ -375,6 +418,11 @@
       "iconName": "AlertOctagon",
       "severity": "urgent",
       "quickSummary": "Police brutality and verbal abuse violate Article 21. Stations are required to maintain functional CCTV cameras.",
+      "panicSteps": [
+        "Prioritize safety first: call 112 if in danger, then go immediately to a government hospital casualty ward.",
+        "Demand a Medico-Legal Certificate (MLC) documenting all physical injuries.",
+        "Apply promptly to the Magistrate/SP to preserve police station CCTV footage."
+      ],
       "yourRights": [
         "Supreme Court mandates operational CCTV cameras with night vision and audio across all police stations (Paramvir Singh Saini judgment).",
         "Right to be free from custodial torture and dignity violations under Article 21.",

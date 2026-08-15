@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Sun, Moon, Laptop, ChevronDown } from "lucide-react";
-import { useTheme, type Theme } from "../context/ThemeContext";
+import { type Theme } from "../context/ThemeContext";
+import { useTheme } from "../hooks/useTheme";
 
 export const ThemeToggle: React.FC = () => {
   const { theme, setTheme } = useTheme();
